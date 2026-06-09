@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
-import { FiArrowDown, FiPlayCircle } from 'react-icons/fi'
+import { FiArrowDown } from 'react-icons/fi'
+
+const heroVideoSrc = import.meta.env.VITE_HERO_VIDEO_URL || '/assets/0609-1.mp4'
 
 const Hero = () => {
   const containerVariants = {
@@ -70,21 +72,19 @@ const Hero = () => {
 
         <motion.div
           variants={itemVariants}
-          className="relative w-full aspect-video max-w-3xl mx-auto"
+          className="relative w-full aspect-video max-w-3xl lg:max-w-2xl xl:max-w-2xl mx-auto"
         >
           <div className="glass p-2 rounded-2xl glow-lg">
             <div className="relative w-full h-full bg-dark-800 rounded-xl overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-900/20 to-cyan-900/20">
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="text-center"
-                >
-                  <FiPlayCircle className="text-6xl mb-4 mx-auto text-cyan-300" />
-                  <p className="text-white/70">Tu video irá aquí</p>
-                  <p className="text-sm text-white/40 mt-2">Video de presentación del proyecto STEM</p>
-                </motion.div>
-              </div>
+              <video
+                className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+                playsInline
+              >
+                <source src={heroVideoSrc} type="video/mp4" />
+                Tu navegador no soporta la reproducción de video.
+              </video>
             </div>
           </div>
         </motion.div>

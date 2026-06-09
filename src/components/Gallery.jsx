@@ -1,14 +1,55 @@
 import { motion } from 'framer-motion'
-import { FiImage } from 'react-icons/fi'
 import useInView from '../hooks/useInView'
 
 const galleryItems = [
-  { id: 1, title: 'Proyecto 1', category: 'Innovación' },
-  { id: 2, title: 'Proyecto 2', category: 'Tecnología' },
-  { id: 3, title: 'Proyecto 3', category: 'Educación' },
-  { id: 4, title: 'Proyecto 4', category: 'Emprendimiento' },
-  { id: 5, title: 'Proyecto 5', category: 'Desarrollo' },
-  { id: 6, title: 'Proyecto 6', category: 'Innovación' },
+  {
+    id: 1,
+    title: 'Momento destacado 1',
+    category: 'INDOTEL STEM',
+    image: '/assets/gallery/gallery-01.png',
+  },
+  {
+    id: 2,
+    title: 'Momento destacado 2',
+    category: 'Participación',
+    image: '/assets/gallery/gallery-02.jpeg',
+  },
+  {
+    id: 3,
+    title: 'Momento destacado 3',
+    category: 'Presentación',
+    image: '/assets/gallery/gallery-03.jpeg',
+  },
+  {
+    id: 4,
+    title: 'Momento destacado 4',
+    category: 'Proyecto',
+    image: '/assets/gallery/gallery-04.jpeg',
+  },
+  {
+    id: 5,
+    title: 'Momento destacado 5',
+    category: 'Innovación',
+    image: '/assets/gallery/gallery-05.jpeg',
+  },
+  {
+    id: 6,
+    title: 'Momento destacado 6',
+    category: 'Tecnología',
+    image: '/assets/gallery/gallery-06.jpeg',
+  },
+  {
+    id: 7,
+    title: 'Momento destacado 7',
+    category: 'Educación',
+    image: '/assets/gallery/gallery-07.jpeg',
+  },
+  {
+    id: 8,
+    title: 'Momento destacado 8',
+    category: 'Logro',
+    image: '/assets/gallery/gallery-08.jpeg',
+  },
 ]
 
 const Gallery = () => {
@@ -56,38 +97,35 @@ const Gallery = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
         </motion.div>
 
-        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {galleryItems.map((item) => (
-            <motion.div
+            <motion.article
               key={item.id}
               variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className="cursor-pointer group"
+              whileHover={{ y: -8 }}
+              className="group"
             >
-              <div className="glass rounded-xl overflow-hidden backdrop-blur-md border border-white/10 group-hover:border-white/30 transition-all duration-300 h-64">
-                <div className="w-full h-full bg-gradient-to-br from-blue-900/20 to-cyan-900/20 flex items-center justify-center relative overflow-hidden">
-                  <motion.div
-                    className="text-center z-10"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <FiImage className="text-4xl mb-3 mx-auto text-cyan-300" />
-                    <p className="text-lg font-semibold text-white">{item.title}</p>
-                    <p className="text-sm text-white/60 mt-2">{item.category}</p>
-                  </motion.div>
-                  <motion.div className="absolute inset-0 bg-gradient-to-t from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="glass rounded-xl overflow-hidden backdrop-blur-md border border-white/10 group-hover:border-white/30 transition-all duration-300">
+                <div className="relative aspect-[4/5] bg-dark-800 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={`${item.title} - ${item.category}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-900/85 via-dark-900/10 to-transparent opacity-90" />
+                  <div className="absolute left-0 right-0 bottom-0 p-4 text-left">
+                    <p className="text-xs uppercase tracking-wide text-cyan-200/80">
+                      {item.category}
+                    </p>
+                    <h3 className="mt-1 text-base font-bold text-white">
+                      {item.title}
+                    </h3>
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          className="mt-16 glass p-8 sm:p-12 rounded-2xl backdrop-blur-md border border-white/10 text-center"
-        >
-          <p className="text-base sm:text-lg text-white/70">
-            La galería se actualizará con tus proyectos, eventos y momentos destacados.
-          </p>
         </motion.div>
       </motion.div>
     </section>

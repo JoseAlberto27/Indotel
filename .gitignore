@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Large local media files should not be pushed to GitHub.
+public/assets/*.mp4
+public/assets/*.mov
+public/assets/*.avi
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,52 +1,48 @@
 import { motion } from 'framer-motion'
 import {
   FiGithub,
-  FiInstagram,
-  FiLinkedin,
   FiMail,
-  FiTwitter,
+  FiUser,
 } from 'react-icons/fi'
 import useInView from '../hooks/useInView'
+
+const email = 'josealbertoramirezjesus@gmail.com'
+const githubUrl = 'https://github.com/JoseAlberto27'
 
 const contactInfo = [
   {
     icon: <FiMail className="text-2xl" />,
     label: 'Email',
-    value: 'tu-email@ejemplo.com',
-    link: 'mailto:tu-email@ejemplo.com',
+    value: email,
+    link: `mailto:${email}`,
     color: 'from-blue-500 to-blue-600',
   },
   {
     icon: <FiGithub className="text-2xl" />,
     label: 'GitHub',
-    value: '@tu-usuario',
-    link: 'https://github.com/tu-usuario',
+    value: '@JoseAlberto27',
+    link: githubUrl,
     color: 'from-purple-500 to-purple-600',
   },
   {
-    icon: <FiLinkedin className="text-2xl" />,
-    label: 'LinkedIn',
-    value: 'tu-perfil',
-    link: 'https://linkedin.com/in/tu-perfil',
+    icon: <FiUser className="text-2xl" />,
+    label: 'Perfil',
+    value: 'José Alberto Ramírez',
+    link: githubUrl,
     color: 'from-cyan-500 to-cyan-600',
   },
 ]
 
 const socialLinks = [
   {
-    icon: <FiTwitter className="text-2xl" />,
-    link: 'https://twitter.com/tu-usuario',
-    label: 'Twitter',
-  },
-  {
-    icon: <FiInstagram className="text-2xl" />,
-    link: 'https://instagram.com/tu-usuario',
-    label: 'Instagram',
-  },
-  {
     icon: <FiGithub className="text-2xl" />,
-    link: 'https://github.com/tu-usuario',
+    link: githubUrl,
     label: 'GitHub',
+  },
+  {
+    icon: <FiMail className="text-2xl" />,
+    link: `mailto:${email}`,
+    label: 'Email',
   },
 ]
 
@@ -113,7 +109,7 @@ const Contact = () => {
                 {info.icon}
               </motion.div>
               <h3 className="text-xl font-bold text-white mb-2">{info.label}</h3>
-              <p className="text-white/60 group-hover:text-white/80 transition-colors">
+              <p className="text-white/60 group-hover:text-white/80 transition-colors break-words">
                 {info.value}
               </p>
             </motion.a>
