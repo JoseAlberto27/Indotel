@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { FiArrowDown } from 'react-icons/fi'
 
-const heroVideoSrc = import.meta.env.VITE_HERO_VIDEO_URL || '/assets/0609-1.mp4'
+const heroVideoSrc = import.meta.env.VITE_HERO_VIDEO_URL || 'https://youtube.com/shorts/jfdf4u1CXQA?si=CcU8iRYooNAR1oET'
 
 const Hero = () => {
   const containerVariants = {
