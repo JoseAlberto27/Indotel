@@ -71,23 +71,21 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          variants={itemVariants}
-          className="relative w-full aspect-video max-w-3xl lg:max-w-2xl xl:max-w-2xl mx-auto"
-        >
-          <div className="glass p-2 rounded-2xl glow-lg">
-            <div className="relative w-full h-full bg-dark-800 rounded-xl overflow-hidden">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                preload="metadata"
-                playsInline
-              >
-                <source src={heroVideoSrc} type="video/mp4" />
-                Tu navegador no soporta la reproducción de video.
-              </video>
-            </div>
-          </div>
-        </motion.div>
+  variants={itemVariants}
+  className="relative w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto"
+>
+  <div className="glass p-2 rounded-2xl glow-lg">
+    <div className="relative w-full aspect-[9/16] rounded-xl overflow-hidden">
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/jfdf4u1CXQA"
+        title="Video STEM INDOTEL"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
+  </div>
+</motion.div>
 
         <motion.div
           animate={{ y: [0, 10, 0] }}
