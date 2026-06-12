@@ -85,7 +85,7 @@ const Gallery = () => {
         className="max-w-6xl mx-auto"
         variants={containerVariants}
         initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
+        animate="visible"
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-4">
